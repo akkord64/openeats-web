@@ -142,6 +142,96 @@ class RecipeForm extends React.Component {
         description: 'Rating source label',
         defaultMessage: 'Source',
       },
+       Calories_label: {
+        id: 'recipe.create.vCalories_label',
+        description: 'Calories Label',
+        defaultMessage: 'Calories',
+      },
+       Calories_placeholder: {
+        id: 'recipe.create.Calories_placeholder',
+        description: 'Calories Placeholder',
+        defaultMessage: 'Calories',
+      },
+       TotalFat_label: {
+        id: 'recipe.create.TotalFat_label',
+        description: 'TotalFat Label',
+        defaultMessage: 'Total Fat',
+      },
+       TotalFat_placeholder: {
+        id: 'recipe.create.TotalFat_placeholder',
+        description: 'TotalFat Placeholder',
+        defaultMessage: 'Total Fat',
+      },
+       SatFat_label: {
+        id: 'recipe.create.SatFat_label',
+        description: 'SatFat Label',
+        defaultMessage: 'Saturated Fat',
+      },
+       SatFat_placeholder: {
+        id: 'recipe.create.SatFat_placeholder',
+        description: 'SatFat placeholder',
+        defaultMessage: 'Saturated Fat',
+      },
+       Cholesterol_label: {
+        id: 'recipe.create.Cholesterol_label',
+        description: 'Cholesterol Label',
+        defaultMessage: 'Cholesterol',
+      },
+       Cholesterol_placeholder: {
+        id: 'recipe.create.Cholesterol_placeholder',
+        description: 'Cholesterol Placeholder',
+        defaultMessage: 'Cholesterol',
+      },
+       Sodium_label: {
+        id: 'recipe.create.Sodium_label',
+        description: 'Sodium Label',
+        defaultMessage: 'Sodium',
+      },
+       Sodium_placeholder: {
+        id: 'recipe.create.Sodium_placeholder',
+        description: 'Sodium Placeholder',
+        defaultMessage: 'Sodium',
+      },
+       TotalCarb_label: {
+        id: 'recipe.create.TotalCarb_label',
+        description: 'TotalCarb Label',
+        defaultMessage: 'Total Carbohydrates',
+      },
+       TotalCarb_placeholder: {
+        id: 'recipe.create.TotalCarb_placeholder',
+        description: 'TotalCarb Placeholder',
+        defaultMessage: 'Total Carbohydrates',
+      },
+       Fibers_label: {
+        id: 'recipe.create.Fibers_label',
+        description: 'Fibers Label',
+        defaultMessage: 'Fiber',
+      },
+       Fibers_placeholder: {
+        id: 'recipe.create.Fibers_placeholder',
+        description: 'Fibers Placeholder',
+        defaultMessage: 'Fiber',
+      },
+       Sugars_label: {
+        id: 'recipe.create.Sugars_label',
+        description: 'Sugars Label',
+        defaultMessage: 'Sugars',
+      },
+       Sugars_placeholder: {
+        id: 'recipe.create.Sugars_placeholder',
+        description: 'Sugars Placeholder',
+        defaultMessage: 'Sugars',
+      },
+       Proteins_label: {
+        id: 'recipe.create.Protein_label',
+        description: 'Protein Label',
+        defaultMessage: 'Protein',
+      },
+       Proteins_placeholder: {
+        id: 'recipe.create.Protein_placeholder',
+        description: 'Protein Placeholder',
+        defaultMessage: 'Protein',
+      },
       source_placeholder: {
         id: 'recipe.create.source_placeholder',
         description: 'Rating source placeholder',
@@ -290,7 +380,102 @@ class RecipeForm extends React.Component {
                 />
               </div>
 
+<div className="form-group null">
+
+    <h4> Nutritional Data: Per Serving (Optional)</h4>
+             <Input
+                name="Calories"
+                label={ formatMessage(messages.Calories_label)}
+                size="col-sm-4 col-xs-12"
+                placeholder={formatMessage(messages.Calories_placeholder)}
+                value={ this.props.form.Calories || '' }
+                change={ this.props.recipeFormActions.update }
+                errors={ this.props.form.errors.Calories }
+                checked={ this.props.form.errors.Calories }
+              />
+              <Input
+                name="TotalFat"
+                label={ formatMessage(messages.TotalFat_label)}
+                size="col-sm-4 col-xs-12"
+                placeholder={formatMessage(messages.TotalFat_placeholder)}
+                value={ this.props.form.TotalFat || '' }
+                change={ this.props.recipeFormActions.update }
+                errors={ this.props.form.errors.TotalFat }
+                checked={ this.props.form.errors.TotalFat }
+              />
+              <Input
+                name="SatFat"
+                label={ formatMessage(messages.SatFat_label)}
+                size="col-sm-4 col-xs-12"
+                placeholder={formatMessage(messages.SatFat_placeholder)}
+                value={ this.props.form.SatFat || '' }
+                change={ this.props.recipeFormActions.update }
+                errors={ this.props.form.errors.SatFat }
+                checked={ this.props.form.errors.SatFat }
+              />
+              <Input
+                name="Cholesterol"
+                label={ formatMessage(messages.Cholesterol_label)}
+                size="col-sm-4 col-xs-12"
+                placeholder={formatMessage(messages.Cholesterol_placeholder)}
+                value={ this.props.form.Cholesterol || '' }
+                change={ this.props.recipeFormActions.update }
+                errors={ this.props.form.errors.Cholesterol }
+                checked={ this.props.form.errors.Cholesterol }
+              />
+              <Input
+                name="Sodium"
+                label={ formatMessage(messages.Sodium_label)}
+                size="col-sm-4 col-xs-12"
+                placeholder={formatMessage(messages.Sodium_placeholder)}
+                value={ this.props.form.Sodium || '' }
+                change={ this.props.recipeFormActions.update }
+                errors={ this.props.form.errors.Sodium }
+                checked={ this.props.form.errors.Sodium }
+              />
+              <Input
+                name="TotalCarb"
+                label={ formatMessage(messages.TotalCarb_label)}
+                size="col-sm-4 col-xs-12"
+                placeholder={formatMessage(messages.TotalCarb_placeholder)}
+                value={ this.props.form.TotalCarb || '' }
+                change={ this.props.recipeFormActions.update }
+                errors={ this.props.form.errors.TotalCarb }
+                checked={ this.props.form.errors.TotalCarb }
+              />
+              <Input
+                name="Fibers"
+                label={ formatMessage(messages.Fibers_label)}
+                size="col-sm-4 col-xs-12"
+                placeholder={formatMessage(messages.Fibers_placeholder)}
+                value={ this.props.form.Fibers || '' }
+                change={ this.props.recipeFormActions.update }
+                errors={ this.props.form.errors.Fibers }
+                checked={ this.props.form.errors.Fibers }
+              />
+              <Input
+                name="Sugars"
+                label={ formatMessage(messages.Sugars_label)}
+                size="col-sm-4 col-xs-12"
+                placeholder={formatMessage(messages.Sugars_placeholder)}
+                value={ this.props.form.Sugars || '' }
+                change={ this.props.recipeFormActions.update }
+                errors={ this.props.form.errors.Sugars }
+                checked={ this.props.form.errors.Sugars }
+              />
+              <Input
+                name="Proteins"
+                label={ formatMessage(messages.Proteins_label)}
+                size="col-sm-4 col-xs-12"
+                placeholder={formatMessage(messages.Proteins_placeholder)}
+                value={ this.props.form.Proteins || '' }
+                change={ this.props.recipeFormActions.update }
+                errors={ this.props.form.errors.Proteins }
+                checked={ this.props.form.errors.Proteins }
+              />
+</div>
             </div>
+
             <div id="recipe" className="col-lg-8 col-md-7">
               <Input
                 name="title"

@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 
 import Loading from '../../base/components/Loading'
 import MenuItemModal from '../../menu/components/modals/MenuItemModal'
+import NutritionalModal from '../../recipe/components/modals/NutritionalModal'
 import RecipeScheme from '../components/RecipeScheme'
 import * as RecipeActions from '../actions/RecipeActions'
 import * as RecipeItemActions from '../actions/RecipeItemActions'
@@ -57,6 +58,15 @@ class Recipe extends React.Component {
             recipe={data.id}
             title={data.title}
             onSave={ this.props.menuItemActions.save }
+            fetchRecipeList={ fetchRecipeList }
+            validation={ menuItemValidation }
+          />
+           <NutritionalModal
+            id={ 0 }
+            show={ showItemModal }
+            onHide={ () => { this.setState({showItemModal: false}) } }
+            recipe={data.id}
+            title={data.title}
             fetchRecipeList={ fetchRecipeList }
             validation={ menuItemValidation }
           />

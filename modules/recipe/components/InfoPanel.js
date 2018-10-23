@@ -7,7 +7,7 @@ import {
 
 import { Input } from '../../common/components/FormComponents'
 
-const RecipeHeader = ({ cookTime, prepTime, servings, customServings, info, updateServings, clearServings, intl }) => {
+const RecipeHeader = ({ cookTime, prepTime, servings, customServings, info, updateServings, clearServings, intl, Calories, TotalFat, SatFat, Cholesterol, Sodium, TotalCarb, Fibers, Sugars, Proteins }) => {
   const messages = defineMessages({
     servings: {
       id: 'recipe.servings',
@@ -29,6 +29,51 @@ const RecipeHeader = ({ cookTime, prepTime, servings, customServings, info, upda
       description: 'minutes',
       defaultMessage: 'minutes'
     },
+    Calories: {
+      id: 'recipe.Calories',
+      description: 'Calories',
+      defaultMessage: 'Calories'
+    },
+    TotalFat: {
+      id: 'recipe.TotalFat',
+      description: 'Total Fat',
+      defaultMessage: 'Total Fat'
+    },
+    SatFat: {
+      id: 'recipe.SatFat',
+      description: 'Saturated Fat',
+      defaultMessage: 'Saturated Fat'
+    },
+    Cholesterol: {
+      id: 'recipe.Cholesterol',
+      description: 'Cholesterol',
+      defaultMessage: 'Cholesterol'
+    },
+    Sodium: {
+      id: 'recipe.Sodium',
+      description: 'Sodium',
+      defaultMessage: 'Sodium'
+    },
+    TotalCarb: {
+      id: 'recipe.TotalCarb',
+      description: 'Total Carbohydrates',
+      defaultMessage: 'Total Carbohydrates'
+    },
+    Fibers: {
+      id: 'recipe.Fibers',
+      description: 'Fibers',
+      defaultMessage: 'Fibers'
+    },
+    Sugars: {
+      id: 'recipe.Sugars',
+      description: 'Sugars',
+      defaultMessage: 'Sugars'
+    },
+    Proteins: {
+      id: 'recipe.Proteins',
+      description: 'Proteins',
+      defaultMessage: 'Proteins'
+    },
   });
 
   let clearInput = '';
@@ -43,50 +88,66 @@ const RecipeHeader = ({ cookTime, prepTime, servings, customServings, info, upda
   }
 
   return (
-    <div className="panel panel-default">
-      <table className="table table-bordered">
-        <thead>
-          <tr className="active">
-            <th>{ intl.formatMessage(messages.servings) }</th>
-            <th>{ intl.formatMessage(messages.prep_time) }</th>
-            <th>{ intl.formatMessage(messages.cooking_time) }</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              <div className="input-group print-hidden">
-                <Input
-                  name="servings"
-                  type="number"
-                  size="servings-textbox"
-                  change={ updateServings }
-                  value={ customServings!==0 ? customServings : '' } />
-                { clearInput }
-              </div>
-              <p className="print-only">{ customServings ? customServings : servings }</p>
-            </td>
-            <td>{ prepTime } { intl.formatMessage(messages.minutes) }</td>
-            <td>{ cookTime } { intl.formatMessage(messages.minutes) }</td>
-          </tr>
-        </tbody>
-      </table>
-      <div className="panel-body">
-        <p>{ info }</p>
-      </div>
-    </div>
-  );
-};
+        <div className="panel panel-default">
+        <table className="table table-bordered">
+            <thead>
+            <tr className="active">
+                <th>{intl.formatMessage(messages.servings)}</th>
+                <th>{intl.formatMessage(messages.prep_time)}</th>
+                <th>{intl.formatMessage(messages.cooking_time)}</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <div className="input-group print-hidden">
+                        <Input
+                            name="servings"
+                            type="number"
+                            size="servings-textbox"
+                            change={updateServings}
+                            value={customServings !== 0 ? customServings : ''}/>
+                        {clearInput}
+                    </div>
+                    <p className="print-only">{customServings ? customServings : servings}</p>
+                </td>
+                <td>{prepTime} {intl.formatMessage(messages.minutes)}</td>
+                <td>{cookTime} {intl.formatMessage(messages.minutes)}</td>
+            </tr>
+            </tbody>
+        </table>
+                <div className="panel-body">
+            <h4>Nutrition Facts</h4>
+            <p>Per Serving: {Calories} Calories; {TotalFat}g Fat; {TotalCarb}g
+                Carbohydrates; {Cholesterol}mg Cholesterol; {Sodium}mg Sodium. </p>
+        </div>
 
-RecipeHeader.PropTypes = {
-  cookTime: PropTypes.number.isRequired,
-  prepTime: PropTypes.number.isRequired,
-  servings: PropTypes.number.isRequired,
-  customServings: PropTypes.string,
-  info: PropTypes.string.isRequired,
-  updateServings: PropTypes.func.isRequired,
-  clearServings: PropTypes.func.isRequired,
-  intl: PropTypes.object.isRequired,
-};
+        </div>
 
-export default injectIntl(RecipeHeader);
+        );
+
+        };
+
+        RecipeHeader.PropTypes = {
+        cookTime: PropTypes.number.isRequired,
+        prepTime: PropTypes.number.isRequired,
+        servings: PropTypes.number.isRequired,
+        customServings: PropTypes.string,
+        info: PropTypes.string.isRequired,
+        updateServings: PropTypes.func.isRequired,
+        clearServings: PropTypes.func.isRequired,
+        intl: PropTypes.object.isRequired,
+        Calories: PropTypes.number.isRequired,
+        TotalFat: PropTypes.number.isRequired,
+        SatFat: PropTypes.number.isRequired,
+        Cholesterol: PropTypes.number.isRequired,
+        Sodium: PropTypes.number.isRequired,
+        TotalCarb: PropTypes.number.isRequired,
+        Fibers: PropTypes.number.isRequired,
+        Sugars: PropTypes.number.isRequired,
+        vProteins: PropTypes.number.isRequired,
+    };
+
+        export default injectIntl(RecipeHeader);)
+        }
+

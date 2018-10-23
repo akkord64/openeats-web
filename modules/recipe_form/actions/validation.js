@@ -54,4 +54,13 @@ export default [
   { name: 'ingredient_groups', validators: [ingRequired] },
   { name: 'directions', validators: [required] },
   { name: 'subrecipes', validators: [] },
+  { name: 'Calories', validators: [double] },
+  { name: 'TotalFat', validators: [double] },
+  { name: 'SatFat', validators: [double] },
+  { name: 'Cholesterol', validators: [double] },
+  { name: 'Sodium', validators: [double] },
+  { name: 'TotalCarb', validators: [double] },
+  { name: 'Fibers', validators: [double] },
+  { name: 'Sugars', validators: [double] },
+  { name: 'Proteins', validators: [double] },
 ]

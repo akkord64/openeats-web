@@ -56,6 +56,15 @@ class RecipeScheme extends React.Component {
                   info={ this.props.info }
                   updateServings={ this.props.recipeActions.updateServings }
                   clearServings={ this.props.recipeActions.resetServings }
+                  Calories={ this.props.Calories}
+                  TotalFat={ this.props.TotalFat}
+                  SatFat={ this.props.SatFat}
+                  Cholesterol={ this.props.Cholesterol}
+                  Sodium={ this.props.Sodium}
+                  TotalCarb={ this.props.TotalCarb}
+                  Fibers={ this.props.Fibers}
+                  Sugars={ this.props.Sugars}
+                  Proteins={ this.props.Proteins}
                 />
               </div>
               <div className="col-sm-5 col-sm-pull-7 col-xs-12">
@@ -85,6 +94,7 @@ class RecipeScheme extends React.Component {
               </div>
             </div>
           </div>
+
           <RecipeFooter
             slug={ this.props.slug }
             source={ this.props.source }
